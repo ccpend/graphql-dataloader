@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - node
+  - lts/*
+cache: npm
+script:
+  - npm run lint
+  - npm run test
+
+after_script:
+  - npm install -g codecov
+  - codecov
+
+jobs:
+  include:
+    - stage: npm release
+      if: tag IS present
+      node_js: node
+      script: npm run build
+      deploy:
+        provider: npm
+        email: "$NPM_EMAIL"
+        api_key: "$NPM_TOKEN"
+        skip_cleanup: true
+        on:
+          tags: true

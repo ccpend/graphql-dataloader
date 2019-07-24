@@ -1,0 +1,63 @@
+{
+  "name": "graph-dataloader",
+  "version": "0.0.1",
+  "description": "GraphQL request ,erge",
+  "main": "dist/main.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "scripts": {
+    "build": "NODE_ENV=production rollup -c",
+    "dev": "rollup -c -w",
+    "lint": "eslint ./src/ ./test/",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BigMaster/graphql-dataloader.git"
+  },
+  "keywords": [
+    "graphql",
+    "request",
+    "merge",
+    "dataloader",
+    "extension",
+    "performance",
+    "combine"
+  ],
+  "author": "BigMaster",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.3.1",
+    "apollo-server-env": "^2.2.0",
+    "babel-jest": "^24.1.0",
+    "dataloader": "^1.4.0",
+    "eslint-config-recommended": "^4.0.0",
+    "eslint-plugin-jest": "^22.2.2",
+    "graphql": "^14.4.2",
+    "graphql-request": "^1.8.2",
+    "jest": "^24.1.0",
+    "lodash-es": "^4.17.15",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-babel-minify": "^7.0.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "source-map-support": "^0.5.12"
+  },
+  "bugs": {
+    "url": "https://github.com/BigMaster/graphql-format-error-context-extension/issues"
+  },
+  "homepage": "https://github.com/BigMaster/graphql-format-error-context-extension#readme",
+  "peerDependencies": {
+    "graphql-extensions": "^0.5.0"
+  },
+  "files": [
+    "dist"
+  ]
+}

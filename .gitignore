@@ -1,0 +1,11 @@
+# IDE
+.idea
+
+# Project
+node_modules/
+dist/
+package-lock.json
+coverage
+
+# 临时文件
+/test
