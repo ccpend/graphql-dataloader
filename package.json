@@ -1,7 +1,7 @@
 {
   "name": "graphql-dataloader",
-  "version": "0.4.4",
-  "description": "GraphQL request ,erge",
+  "version": "0.4.5",
+  "description": "Accelerate response by combining multiple GraphQL requests with Dataloader",
   "main": "dist/main.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
