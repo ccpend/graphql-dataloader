@@ -1,5 +1,5 @@
 {
-  "name": "graph-dataloader",
+  "name": "graphql-dataloader",
   "version": "0.4.1",
   "description": "GraphQL request ,erge",
   "main": "dist/main.js",
