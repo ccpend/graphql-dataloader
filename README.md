@@ -141,7 +141,7 @@ request(secondQuery, secondQueryVariables);
 request(thirdQuery, thirdQueryVariables);
 ```
 
-* The compiled graphQL query statement is:
+* The compiled GraphQL query statement is:
 
 ```graphql
 query ($bookStoreFilter_7W3SNT: bookStoreFilter!,$bookCategoryFilter_kQn6g2: bookCategoryFilter!,$schoolFilter_LrYXPW: schoolFilter!, $fetchBookStoreFilter_MJqUUQ: fetchBookStoreFilter!,$fetchSchoolFilter_NN6qX0: fetchSchoolFilter!, $userFilter: getUserParamsFilter!,$areaFilter: singleAreaByIdFilter!) {
