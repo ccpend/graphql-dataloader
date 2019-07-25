@@ -159,12 +159,16 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  //transform: {},
+  transform: {
+    // 将.js后缀的文件使用babel-jest处理
+    "^.+\\.js$": "babel-jest",
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  // transformIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
+  // 下面非要从重要, 将不忽略 lodash-es, other-es-lib 这些es库, 从而使babel-jest去处理它们
+  transformIgnorePatterns: [
+    "<rootDir>/node_modules/(?!(lodash-es))"
+  ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,

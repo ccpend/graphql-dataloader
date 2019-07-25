@@ -61,24 +61,28 @@ export default class GraphQLDataLoader {
     const otherDefinitions = [];
     const variableDefinitions = [];
     const separator = `_${makeRandomId(6)}_`;
-    const newVariables = Object.create(null);
+    const newVariables = {};
 
     keys.forEach((item, batchIndex) => {
       const jsonObjectData = JSON.parse(item);
       const { variables } = jsonObjectData;
       const tmpVariablesMapping = {};
-      let { queryDSL } = jsonObjectData;
+      let { query: queryDSL } = jsonObjectData;
       let hasFirstQuery = false;
       queryDSL = deepFindHandle(queryDSL, 'kind', 'Variable', object => {
         if (object.name && object.name.value) {
           const oldKey = object.name.value;
           if (variables.hasOwnProperty(oldKey)) {
-            const newKey = tmpVariablesMapping.hasOwnProperty(oldKey)
-              ? tmpVariablesMapping[oldKey]
-              : `${oldKey}_${makeRandomId(6)}_`;
+            let newKey = '';
+            if (tmpVariablesMapping.hasOwnProperty(oldKey)) {
+              newKey = tmpVariablesMapping[oldKey];
+            } else {
+              newKey = `${oldKey}_${makeRandomId(6)}`;
+              newVariables[newKey] = variables[oldKey];
+              tmpVariablesMapping[oldKey] = newKey;
+            }
+
             object.name.value = newKey;
-            newVariables[newKey] = variables[oldKey];
-            tmpVariablesMapping[oldKey] = newKey;
           }
         }
 
