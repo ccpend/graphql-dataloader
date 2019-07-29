@@ -24,8 +24,6 @@ graphql-dataloader
 [license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
 [license-url]: https://opensource.org/licenses/MIT
 
-This is just a trial version!!!
-
 * Install the npm package as a dependency `npm i graphql-dataloader --save`.
 * Multiple GraphQL requests are merged into one large query and sent in an event loop.
 
