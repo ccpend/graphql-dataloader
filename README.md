@@ -27,7 +27,7 @@ graphql-dataloader
 This is just a trial version!!!
 
 * Install the npm package as a dependency `npm i graphql-dataloader --save`.
-* Multiple QraphQL requests are merged into one large query and sent in an event loop.
+* Multiple GraphQL requests are merged into one large query and sent in an event loop.
 
 ```js
 import { GraphQLDataLoader } from 'graphql-dataloader';
@@ -141,7 +141,7 @@ request(secondQuery, secondQueryVariables);
 request(thirdQuery, thirdQueryVariables);
 ```
 
-* The compiled graphQL query statement is:
+* The compiled GraphQL query statement is:
 
 ```graphql
 query ($bookStoreFilter_6hD5OG: bookStoreFilter!,$bookCategoryFilter_X2NbDW: bookCategoryFilter!,$schoolFilter_WA2hvm: schoolFilter!, $fetchBookStoreFilter_KXv0B6: fetchBookStoreFilter!,$fetchSchoolFilter_k4xyev: fetchSchoolFilter!, $userFilter: getUserParamsFilter!,$areaFilter: singleAreaByIdFilter!) {
