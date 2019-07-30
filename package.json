@@ -1,6 +1,6 @@
 {
   "name": "graphql-dataloader",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "description": "Accelerate response by combining multiple GraphQL requests with Dataloader",
   "main": "dist/main.js",
   "module": "dist/index.es.js",
@@ -51,9 +51,9 @@
     "source-map-support": "^0.5.12"
   },
   "bugs": {
-    "url": "https://github.com/BigMaster/graphql-format-error-context-extension/issues"
+    "url": "https://github.com/BigMaster/graphql-dataloader/issues"
   },
-  "homepage": "https://github.com/BigMaster/graphql-format-error-context-extension#readme",
+  "homepage": "https://github.com/BigMaster/graphql-dataloader#readme",
   "peerDependencies": {
     "graphql-extensions": "^0.5.0"
   },
