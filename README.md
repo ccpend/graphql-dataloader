@@ -142,44 +142,44 @@ request(thirdQuery, thirdQueryVariables);
 * The compiled GraphQL query statement is:
 
 ```graphql
-query ($bookStoreFilter_6hD5OG: bookStoreFilter!,$bookCategoryFilter_X2NbDW: bookCategoryFilter!,$schoolFilter_WA2hvm: schoolFilter!, $fetchBookStoreFilter_KXv0B6: fetchBookStoreFilter!,$fetchSchoolFilter_k4xyev: fetchSchoolFilter!, $userFilter: getUserParamsFilter!,$areaFilter: singleAreaByIdFilter!) {
-  getBookStore_3AMi6s_0: getBookStore(filter: $bookStoreFilter_6hD5OG) {
+query ($bookStoreFilter_wEJaW7: bookStoreFilter!,$bookCategoryFilter_68UmMW: bookCategoryFilter!,$schoolFilter_29jQNC: schoolFilter!, $fetchBookStoreFilter_xTNrIb: fetchBookStoreFilter!,$fetchSchoolFilter_mpHhqy: fetchSchoolFilter!, ) {
+  getBookStore_U7TVvc_0: getBookStore(filter: $bookStoreFilter_wEJaW7) {
     storeInfo {
       name
     }
     firstBook: book(filter: {id: "1"}) {
       name
     }
-    book(filter: $bookCategoryFilter_X2NbDW) {
+    book(filter: $bookCategoryFilter_68UmMW) {
       id
       name
     }
   }
-  getSchool_3AMi6s_0: getSchool(filter: $schoolFilter_WA2hvm) {
+  getSchool_U7TVvc_0: getSchool(filter: $schoolFilter_29jQNC) {
     name
   }
-  fetchBookStore_3AMi6s_1: fetchBookStore(filter: $bookStoreFilter) {
+  fetchBookStore_U7TVvc_1: fetchBookStore(filter: $bookStoreFilter) {
     storeInfo {
       name
       district
       address
     }
   }
-  fetchSchool_3AMi6s_1: fetchSchool(filter: $fetchSchoolFilter_k4xyev) {
+  fetchSchool_U7TVvc_1: fetchSchool(filter: $fetchSchoolFilter_mpHhqy) {
     name
   }
-  fetchWarehouse_3AMi6s_1: fetchWarehouse(filter: $fetchWarehouseFilter_tb0JHH) {
+  fetchWarehouse_U7TVvc_1: fetchWarehouse(filter: $fetchWarehouseFilter_pThtEr) {
     id
     location {
       latitude
       longitude
     }
   }
-  fetchWarehouse_3AMi6s_2_3AMi6s_SF_Warehouse: fetchWarehouse(filter: {city: "SF"}) {
+  fetchWarehouse_U7TVvc_2_U7TVvc_SF_Warehouse: fetchWarehouse(filter: {city: "SF"}) {
     id
     address
   }
-  fetchWarehouse_3AMi6s_2_3AMi6s_LA_Warehouse: fetchWarehouse(filter: {city: "LA"}) {
+  fetchWarehouse_U7TVvc_2_U7TVvc_LA_Warehouse: fetchWarehouse(filter: {city: "LA"}) {
     id
     address
   }
@@ -189,11 +189,11 @@ query ($bookStoreFilter_6hD5OG: bookStoreFilter!,$bookCategoryFilter_X2NbDW: boo
 * These variables are:
 ```js
 {
-  bookStoreFilter_6hD5OG: { id: 10 },
-  bookCategoryFilter_X2NbDW: { category: 'technology' },
-  schoolFilter_WA2hvm: { id: 100 },
-  fetchBookStoreFilter_KXv0B6: { city: 'NY' },
-  fetchSchoolFilter_k4xyev: { city: 'NY' },
-  fetchWarehouseFilter_tb0JHH: { city: 'NY' }
+  bookStoreFilter_wEJaW7: { id: 10 },
+  bookCategoryFilter_68UmMW: { category: 'technology' },
+  schoolFilter_29jQNC: { id: 100 },
+  fetchBookStoreFilter_xTNrIb: { city: 'NY' },
+  fetchSchoolFilter_mpHhqy: { city: 'NY' },
+  fetchWarehouseFilter_pThtEr: { city: 'NY' }
 }
 ```
