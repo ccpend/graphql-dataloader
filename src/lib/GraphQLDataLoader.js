@@ -167,8 +167,6 @@ export default class GraphQLDataLoader {
       definitions: [...queryDefinition, ...otherDefinitions]
     });
 
-    console.log(query, newVariables)
-
     return GraphQLDataLoader.dispatchResult(await request(this.endpoint, query, newVariables), separator);
   }
 
