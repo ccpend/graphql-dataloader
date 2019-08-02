@@ -110,10 +110,7 @@ const secondQueryVariables = {
 };
 
 const thirdQuery = `
-  query thirdQuery(
-    $userFilter: getUserParamsFilter!
-    $areaFilter: singleAreaByIdFilter!
-  ) {
+  query thirdQuery {
     SF_Warehouse: fetchWarehouse(filter: {city: "SF"}) {
       id
       address
