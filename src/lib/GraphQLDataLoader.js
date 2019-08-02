@@ -67,6 +67,7 @@ export default class GraphQLDataLoader {
       const jsonObjectData = JSON.parse(item);
       const { variables } = jsonObjectData;
       const tmpVariablesMapping = {};
+      const tmpFragmentMapping = {};
       let { query: queryDSL } = jsonObjectData;
       let hasFirstQuery = false;
       queryDSL = deepFindHandle(queryDSL, 'kind', 'Variable', object => {
@@ -84,6 +85,23 @@ export default class GraphQLDataLoader {
 
             object.name.value = newKey;
           }
+        }
+
+        return object;
+      });
+
+      deepFindHandle(queryDSL, 'kind', 'FragmentSpread', object => {
+        if (object.name && object.name.value) {
+          const oldName = object.name.value;
+          let newName = '';
+          if (tmpFragmentMapping.hasOwnProperty(oldName)) {
+            newName = tmpFragmentMapping[oldName];
+          } else {
+            newName = `${oldName}_${makeRandomId(6)}`;
+            tmpFragmentMapping[oldName] = newName;
+          }
+
+          object.name.value = newName;
         }
 
         return object;
@@ -119,6 +137,13 @@ export default class GraphQLDataLoader {
           if (definition.variableDefinitions) {
             variableDefinitions.push(definition.variableDefinitions);
           }
+        } else if (definition.kind === 'FragmentDefinition') {
+          const oldFragmentName = definition.name.value;
+          if (tmpFragmentMapping.hasOwnProperty(oldFragmentName)) {
+            definition.name.value = tmpFragmentMapping[oldFragmentName];
+          }
+
+          otherDefinitions.push(definition);
         } else {
           otherDefinitions.push(definition);
         }
@@ -141,6 +166,8 @@ export default class GraphQLDataLoader {
       kind: "Document",
       definitions: [...queryDefinition, ...otherDefinitions]
     });
+
+    console.log(query, newVariables)
 
     return GraphQLDataLoader.dispatchResult(await request(this.endpoint, query, newVariables), separator);
   }
